@@ -21,7 +21,7 @@ export function ThemeToggle() {
   };
 
   return (
-    <Button variant="ghost2" size="default" onClick={toggleTheme}>
+    <Button variant="ghost" size="icon" onClick={toggleTheme}>
       <Sun
         className={`h-[2rem] w-[2rem] transition-all ${
           currentTheme === "dark" ? "scale-0 rotate-90" : "scale-100 rotate-0"

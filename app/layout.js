@@ -21,10 +21,10 @@ export default function RootLayout({ children }) {
           disableTranstionOnChange
         >
           <Header />
-          {/*Header*/}
-          <main className="min-h-screen">{children}</main>
-          {/*Footer*/}
-          <footer className="py-8 border-t">
+
+          <main className="min-h-screen shadow-md">{children}</main>
+
+          <footer className="py-8">
             <div className="container mx-auto px-4 text-center text-primary">
               <p>Made by Ramon Z.</p>
             </div>
