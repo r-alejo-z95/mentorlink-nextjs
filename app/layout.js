@@ -2,6 +2,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/header";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata = {
   title: "MentorLink - Empowering Mentors",
@@ -26,7 +28,9 @@ export default function RootLayout({ children }) {
 
           <footer className="py-8">
             <div className="container mx-auto px-4 text-center text-primary">
-              <p>Made by Ramon Z.</p>
+              <Link href="https://github.com/r-alejo-z95">
+                <Button variant="link">Made by Ramon Z.</Button>
+              </Link>
             </div>
           </footer>
         </ThemeProvider>
