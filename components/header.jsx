@@ -6,7 +6,7 @@ import { PenBox } from "lucide-react";
 
 export function Header() {
   return (
-    <nav className="mx-auto pl-2 pr-4 flex justify-between items-center shadow-md border-b">
+    <nav className="mx-auto pl-2 pr-4 flex justify-between items-center shadow-md">
       <Link href={"/"} className="flex items-center">
         <Image
           src="/logo-orange.svg"
