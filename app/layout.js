@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Header } from "@/components/header";
 
 export const metadata = {
   title: "MentorLink - Empowering Mentors",
@@ -19,7 +20,15 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTranstionOnChange
         >
-          {children}
+          <Header />
+          {/*Header*/}
+          <main className="min-h-screen">{children}</main>
+          {/*Footer*/}
+          <footer className="py-8 border-t">
+            <div className="container mx-auto px-4 text-center text-primary">
+              <p>Made by Ramon Z.</p>
+            </div>
+          </footer>
         </ThemeProvider>
       </body>
     </html>
