@@ -8,7 +8,7 @@ export function UserMenu() {
     <UserButton
       appearance={{
         elements: {
-          avatarBox: "!w-10 !h-10",
+          avatarBox: "!size-10",
         },
       }}
     >
@@ -18,6 +18,7 @@ export function UserMenu() {
           labelIcon={<CalendarRange size={15} />}
           href="/events"
         />
+        <UserButton.Action label="manageAccount" />
       </UserButton.MenuItems>
     </UserButton>
   );
