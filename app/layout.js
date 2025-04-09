@@ -15,8 +15,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <ClerkProvider>
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
             </footer>
           </ThemeProvider>
         </body>
-      </html>
-    </ClerkProvider>
+      </ClerkProvider>
+    </html>
   );
 }

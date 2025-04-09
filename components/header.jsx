@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "./ui/button";
 import { PenBox } from "lucide-react";
+import { UserMenu } from "./user-menu";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export function Header() {
   return (
@@ -24,7 +26,14 @@ export function Header() {
             Create Event
           </Button>
         </Link>
-        <Button variant="outline">Login</Button>
+        <SignedOut>
+          <SignInButton forceRedirectUrl="/dashboard">
+            <Button variant="outline">Login</Button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserMenu />
+        </SignedIn>
       </div>
     </nav>
   );
