@@ -4,7 +4,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "./ui/button";
 import { PenBox } from "lucide-react";
 import { UserMenu } from "./user-menu";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 export function Header() {
   return (
