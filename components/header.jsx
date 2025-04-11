@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { UserMenu } from "./user-menu";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+
 import React from "react";
 
 const menuItems = [
@@ -16,12 +19,16 @@ const menuItems = [
 ];
 
 export const Header = () => {
-  const [menuState, setMenuState] = React.useState(false);
+  const [menuState, setMenuState] = useState(false);
+  const pathname = usePathname();
+
   return (
     <header>
       <nav
         data-state={menuState && "active"}
-        className="bg-background/50 fixed z-20 w-full shadow-md backdrop-blur-3xl"
+        className={`bg-background/50 z-20 w-full shadow-md backdrop-blur-3xl ${
+          pathname === "/" ? "fixed" : "relative"
+        }`}
       >
         <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
@@ -66,6 +73,7 @@ export const Header = () => {
             </div>
 
             <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-4 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+              <ThemeToggle />
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
                   {menuItems.map((item, index) => (
@@ -80,17 +88,16 @@ export const Header = () => {
                   ))}
                 </ul>
               </div>
-              <ThemeToggle />
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                {/* <Link href="/events?create=true">
-                  <Button>
-                    <PenBox size={18} />
-                    Create Event
-                  </Button>
-                </Link> */}
+              <div className="flex flex-col w-3/4 mx-auto md:w-4/5">
                 <SignedOut>
                   <SignInButton forceRedirectUrl="/dashboard">
-                    <Button>Login</Button>
+                    <Button
+                      onClick={() => {
+                        setMenuState(false);
+                      }}
+                    >
+                      Login
+                    </Button>
                   </SignInButton>
                 </SignedOut>
                 <SignedIn>
