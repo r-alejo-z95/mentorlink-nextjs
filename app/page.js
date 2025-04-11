@@ -10,8 +10,8 @@ export default function Home() {
       <HeroSection />
       <Features />
       <Pricing />
-      <ContactSection />
       <CallToAction />
+      <ContactSection />
     </>
   );
 }

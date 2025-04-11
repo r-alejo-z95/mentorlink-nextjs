@@ -13,23 +13,19 @@ import { Card } from "@/components/ui/card";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-32">
+    <section id="contact" className="pb-24">
       <div className="mx-auto max-w-3xl px-8 lg:px-0">
         <h1 className="text-center text-4xl font-semibold lg:text-5xl">
-          Contact Sales
+          Contact us
         </h1>
-        <p className="mt-4 text-center">
-          We'll help you find the right plan and pricing for your business.
-        </p>
+        <p className="mt-4 text-center">Anything you'd like to tell us?</p>
 
         <Card className="mx-auto mt-12 max-w-lg p-8 shadow-md sm:p-16">
           <div>
-            <h2 className="text-xl font-semibold">
-              Let's get you to the right place
-            </h2>
+            <h2 className="text-xl font-semibold">Let's get in touch!</h2>
             <p className="mt-4 text-sm">
-              Reach out to our sales team! We’re eager to learn more about how
-              you plan to use our application.
+              We’re eager to learn more about how you plan to use our
+              application.
             </p>
           </div>
 
@@ -38,50 +34,13 @@ export default function ContactSection() {
             className="**:[&>label]:block mt-12 space-y-6 *:space-y-3"
           >
             <div>
-              <Label htmlFor="name">Full name</Label>
+              <Label htmlFor="name">Name</Label>
               <Input type="text" id="name" required />
             </div>
 
             <div>
-              <Label htmlFor="email">Work Email</Label>
+              <Label htmlFor="email">Email</Label>
               <Input type="email" id="email" required />
-            </div>
-
-            <div>
-              <Label htmlFor="country">Country/Region</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select Country/Region" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="1">DR Congo</SelectItem>
-                  <SelectItem value="2">United States</SelectItem>
-                  <SelectItem value="3">France</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <Label htmlFor="website">Company Website</Label>
-              <Input type="url" id="website" />
-              <span className="text-muted-foreground inline-block text-sm">
-                Must start with 'https'
-              </span>
-            </div>
-
-            <div>
-              <Label htmlFor="job">Job function</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select Job Function" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="1">Finance</SelectItem>
-                  <SelectItem value="2">Education</SelectItem>
-                  <SelectItem value="3">Legal</SelectItem>
-                  <SelectItem value="4">More</SelectItem>
-                </SelectContent>
-              </Select>
             </div>
 
             <div>
