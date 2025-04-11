@@ -11,16 +11,18 @@ import { usePathname } from "next/navigation";
 
 import React from "react";
 
-const menuItems = [
-  { name: "Features", href: "#link" },
-  { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
-];
-
 export const Header = () => {
   const [menuState, setMenuState] = useState(false);
   const pathname = usePathname();
+
+  const menuItems = [
+    {
+      name: "Features",
+      href: `${pathname === "/" ? "#features" : "/#features"}`,
+    },
+    { name: "Pricing", href: `${pathname === "/" ? "#pricing" : "/#pricing"}` },
+    { name: "Contact", href: `${pathname === "/" ? "#contact" : "/#contact"}` },
+  ];
 
   return (
     <header>
@@ -79,7 +81,11 @@ export const Header = () => {
                   {menuItems.map((item, index) => (
                     <li key={index}>
                       <Link
+                        onClick={() => {
+                          setMenuState(false);
+                        }}
                         href={item.href}
+                        scroll={true}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                       >
                         <span>{item.name}</span>
