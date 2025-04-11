@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { GithubLogo } from "./github-logo";
 import Link from "next/link";
 
 const currentYear = new Date().getFullYear();
@@ -10,6 +11,7 @@ export function Footer() {
         <Link href="https://github.com/r-alejo-z95">
           <Button variant="link" className="text-sm font-normal">
             Made by Ramon Z.
+            <GithubLogo />
           </Button>
         </Link>
         <p className="text-sm font-normal">© {currentYear}</p>

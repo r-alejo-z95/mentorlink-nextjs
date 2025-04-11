@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { PenBox } from "lucide-react";
 import { UserMenu } from "./user-menu";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import React from "react";
